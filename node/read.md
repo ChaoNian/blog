@@ -31,4 +31,6 @@ module规范配置："type": "module"
 
 
 
-## 源码
+## 操作DOM
+npm i jsdom
+ SSR-CSR_SEO文件

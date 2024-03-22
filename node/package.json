@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "type": "commonjs",
-   "scripts": {
-    "dev": "node 全局变量/index.js",
+  "scripts": {
+    "dev": "node SSR-CSR-SEO/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsdom": "^24.0.0",
     "md5": "^2.3.0"
   }
 }

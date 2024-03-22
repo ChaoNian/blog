@@ -1,5 +1,5 @@
 console.log('text.js---------')
-// 导出
-module.exports = {
-    q:1
-}
+// commonjs 导出
+// module.exports = {
+//     q:1
+// }
