@@ -23,6 +23,6 @@
 
 
 // module(esm)规范
-import q from './module.js'
-import * as all from './module.js' // 导出所有东西
-console.log(q, all, '-----module---');
+// import q from './cjs-esm-01/module.js'
+// import * as all from './cjs-esm-01/module.js' // 导出所有东西
+// console.log(q, all, '-----module---');
