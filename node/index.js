@@ -26,3 +26,5 @@
 // import q from './cjs-esm-01/module.js'
 // import * as all from './cjs-esm-01/module.js' // 导出所有东西
 // console.log(q, all, '-----module---');
+
+import All from './全局变量'
