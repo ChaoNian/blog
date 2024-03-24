@@ -5,13 +5,15 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "node SSR-CSR-SEO/index.js",
+    "dev": "cross-env NODE_ENV=dev node process/index.js --open -xm",
+    "build":"cross-env NODE_ENV=pro node process/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "jsdom": "^24.0.0",
     "md5": "^2.3.0"
   }

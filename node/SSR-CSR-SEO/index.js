@@ -35,7 +35,7 @@ fetch('https://api.thecatapi.com/v1/images/search?limit=10&page=1').then(res => 
 
 
 /**
- * SSR（Server-Side Rendering） ：上面的代码就是 服务队渲染请求数据和瓶装躲在服务端完成---服务端渲染
+ * SSR（Server-Side Rendering） ：上面的代码就是 服务队渲染请求数据和瓶装躲都在服务端完成---服务端渲染
  * CSR（Server-Side Rendering）： Vue，React 等框架 在客户端渲染和瓶装数据 ---客户端渲染 
  * 
  * SSR CSR 区别
@@ -43,7 +43,8 @@ fetch('https://api.thecatapi.com/v1/images/search?limit=10&page=1').then(res => 
  * 1、页面加载方式
  *    CSR：在 CSR 中，服务器返回一个初始的 HTML 页面，然后浏览器下载并执行 JavaScript 文件，JavaScript 负责动态生成并更新页面内容。这意味着初始页面加载时，内容较少，页面结构和样式可能存在一定的延迟。
       SSR：在 SSR 中，服务器在返回给浏览器之前，会预先在服务器端生成完整的 HTML 页面，包含了初始的页面内容。浏览器接收到的是已经渲染好的 HTML 页面，因此初始加载的速度较快。
-   2、 内容生成和渲染：
+   
+      2、 内容生成和渲染：
 
     CSR：在 CSR 中，页面的内容生成和渲染是由客户端的 JavaScript 脚本负责的。当数据变化时，JavaScript 会重新生成并更新 DOM，从而实现内容的动态变化。这种方式使得前端开发更加灵活，可以创建复杂的交互和动画效果。
     SSR：在 SSR 中，服务器在渲染页面时会执行应用程序的代码，并生成最终的 HTML 页面。这意味着页面的初始内容是由服务器生成的，对于一些静态或少变的内容，可以提供更好的首次加载性能。
@@ -64,7 +65,15 @@ SEO （Search Engine Optimization，搜索引擎优化）
 
 SSR 应用例如 内容密集型应用大部分是ToC 新闻网站 ，博客网站，电子商务，门户网站需要更高的SEO支持
 
+怎么做
+TDK 对应的标签和属性， 下面内容会被爬虫抓取
+T：<title>%VITE_APP_TITLE%</title>
+D： description描述 content，<meta name="description" content="有织"></meta>
+K：Keywords关键值  content <meta name="Keywords" content="有织"></meta>
 
+语义化标签
+a 标签， href
+main 标签 一个页面只能有一个main标签
 
 
  *     
