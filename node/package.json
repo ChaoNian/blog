@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev node fs/index.js --open -xm",
-    "build":"cross-env NODE_ENV=pro node fs/index.js",
+    "dev": "cross-env NODE_ENV=dev node crypto/index.js --open -xm",
+    "build":"cross-env NODE_ENV=pro node crypto/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
