@@ -27,4 +27,13 @@
 // import * as all from './cjs-esm-01/module.js' // 导出所有东西
 // console.log(q, all, '-----module---');
 
-import All from './全局变量'
+// import All from './全局变量'
+
+const {execFile}  = require('node:child_process')
+const path = require('node:path')
+console.log(process.cwd(), 'w808');
+execFile(path.resolve(process.cwd(), './a.sh'), null, (err, stdout, msg) => {
+        console.log(stdout.toString());
+        // console.log(1212);
+    //     // console.log(stdout);
+    })

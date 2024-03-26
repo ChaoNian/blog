@@ -1,0 +1,1 @@
+/Users/huangxiaohao/前端开发/blog/node/fs/index.txt
