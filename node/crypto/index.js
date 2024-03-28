@@ -58,7 +58,7 @@ const crypto = require('node:crypto')
 // // 要加密的数据
 // const text = '小茗'
 
-// // 使用公钥进行加密
+// // 使用公钥进行加密，用 key 加密 buffer 的内容，并返回带有加密内容的新 Buffer。 返回的数据可以使用相应的私钥解密
 // const enctypted = crypto.publicEncrypt(publicKey, Buffer.from(text, 'utf-8'))
 // console.log(enctypted.toString('hex')); // 显示16进制
 

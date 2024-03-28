@@ -160,6 +160,6 @@ Node.js io操作 读取文件的时候是使用libuv进行调度的
 // 两个文件共用内存地址， 其中一个文件修改内容后   会同步另外一个文件
 // 硬链接  作为  共享文件  备份文件
 
-// 软链接 很想window 的快捷方式
+// 软链接 很像window 的快捷方式
 // 会提示没有权限 window 需要管理员权限打开powershell，  mac sodu node index.js   才会创建文件
 fs.symlinkSync('/Users/huangxiaohao/前端开发/blog/node/fs/index.txt', '/Users/huangxiaohao/前端开发/blog/node/fs/index3.txt')
