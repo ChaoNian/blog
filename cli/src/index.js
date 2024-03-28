@@ -9,17 +9,19 @@
 import { program } from 'commander'
 import fs from 'node:fs'
 import inquirer from 'inquirer'
-
+// import chalk from "chalk";
 import { checkPath, downloadTemp } from './util.js'
 
 // 获取到版本号
 let json = fs.readFileSync('./package.json')
 json = JSON.parse(json)
-// console.log(json.version, 'json');
+console.log(json.version, 'json');
 
 // 创建版本号， 从package.json获取  这样可以创建好版本号，可以执行 test-cli -V 
 program.version(json.version)
-
+// program.version(json.version).on('--help', () => {
+//     console.log(chalk.green('run testcli and edit the setting.'));
+// }).parse(process.argv);
 
 // 创建模版（变量projectName） 别名是 c 描述 是创建项目， todo了。。。
 program.command('create <projectName>').alias('c').description('创建项目').action((projectName) => {

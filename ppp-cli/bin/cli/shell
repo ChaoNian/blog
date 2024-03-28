@@ -1,0 +1,4 @@
+#!/usr/local/bin/node
+const Creation = require('../../src/index.js');
+const project = new Creation();
+project.do(); 
