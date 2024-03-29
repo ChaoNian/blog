@@ -1,0 +1,12 @@
+# # # 方法  地址  http/1.1是版本
+# POST http://localhost:98/login HTTP/1.1
+
+# Content-Type: application/json
+
+# {
+#     "name":"小满zs"
+# }
+
+
+GET http://localhost:98/get?a=1&b=2 HTTP/1.1
+

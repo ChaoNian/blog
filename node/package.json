@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev node 压缩/http.js --open -xm",
-    "build":"cross-env NODE_ENV=pro node 压缩/index.js",
+    "dev": "cross-env NODE_ENV=dev node http/index.js --open -xm",
+    "build":"cross-env NODE_ENV=pro node http/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
