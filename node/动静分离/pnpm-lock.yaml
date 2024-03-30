@@ -1,0 +1,18 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  mime:
+    specifier: ^4.0.1
+    version: 4.0.1
+
+packages:
+
+  /mime@4.0.1:
+    resolution: {integrity: sha512-5lZ5tyrIfliMXzFtkYyekWbtRXObT9OWa8IwQ5uxTBDHucNNwniRqo0yInflj+iYi5CBa6qxadGzGarDfuEOxA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: false

@@ -1,0 +1,12 @@
+{
+  "name": "dynamic-static",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "mime": "^4.0.1"
+  }
+}
