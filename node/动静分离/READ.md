@@ -70,3 +70,6 @@ node index.js
 http://localhost/static/index.css
 http://localhost/static/index.html
 http://localhost/static/node.png
+
+### 思路2
+![Alt text](./static/image.png)
