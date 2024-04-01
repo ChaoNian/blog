@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 前端代码 -->
+    <script>
+        // fetch('http://localhost:3000/info', {
+        //     // method: 'POST',
+        //     headers:{
+        //         'Content-Type':'application/json' // 后端需要配置
+        //     },
+        // }).then(res => {
+        //     const headers = res.headers 
+        //     console.log(headers.get('ABCDS'), '---') //读取自定义响应头
+        //     return res.json()
+        // }).then(res => {
+        //     console.log(res)
+        // })
+
+        const sse = new EventSource('http://localhost:3000/sse')
+        // test 可以改名字  在后端设置
+        sse.addEventListener('test', (event) => {
+            console.log(event.data)
+        })
+
+
+    </script>
+</body>
+
+</html>
