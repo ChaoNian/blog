@@ -2,8 +2,8 @@
  * 基础类型
  */
 // 字符串
-let str: string = '我是字符串'
-console.log(str);
+// let str: string = '我是字符串'
+// console.log(str);
 
 // 数字类型 number
 // let num: number = 121
