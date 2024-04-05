@@ -120,7 +120,7 @@ const map:Map<mapTypes, mapTypes> = new Map()
 map.set('1', 'AAA')
 map.set('2', 'BBB')
 
-const obj = {
+const obj2 = {
     aaa: 123,
     bbb: 234
 }

@@ -33,6 +33,7 @@ const app = express()
 // 将以上路由写法   模块化拆分
 import User from './src/user.js'
 import List from './src/list.js'
+//生成日志 中间件
 import LoggerMiddleware from './middlware/logger.js'
 
 
