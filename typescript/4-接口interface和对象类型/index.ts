@@ -94,17 +94,17 @@
 
 
 // ----添加函数
-interface Person {
-    b?: string,
-    readonly a: string,
-    [propName: string]: any;
-    cb:()=>void
-}
+// interface Person {
+//     b?: string,
+//     readonly a: string,
+//     [propName: string]: any;
+//     cb:()=>void
+// }
  
-const person: Person = {
-    a: "213",
-    c: "123",
-    cb:()=>{
-        console.log(123)
-    }
-}
+// const person: Person = {
+//     a: "213",
+//     c: "123",
+//     cb:()=>{
+//         console.log(123)
+//     }
+// }

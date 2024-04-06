@@ -125,20 +125,20 @@ const obj2 = {
     bbb: 234
 }
 
-let set:Set<number> = new Set([1,2,3,4,5,6])
+// let set:Set<number> = new Set([1,2,3,4,5,6])
 
-const gen = (erg:any):void => {
-    let it: Iterator<any> = erg[Symbol.iterator]()
-    let next:any = {done:false}
+// const gen = (erg:any):void => {
+//     let it: Iterator<any> = erg[Symbol.iterator]()
+//     let next:any = {done:false}
 
-    while (!next.done) {
-        next = it.next()
-        if (!next.done) {
-            console.log(next.value);
-        }
+//     while (!next.done) {
+//         next = it.next()
+//         if (!next.done) {
+//             console.log(next.value);
+//         }
         
-    }
-}
+//     }
+// }
 // gen(array)// { age: 23, name: '1' } { age: 23, name: '2' } { age: 23, name: '3' }
 // gen(map) // [ '1', 'AAA' ]  [ '2', 'BBB' ]
 
