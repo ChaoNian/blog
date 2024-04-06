@@ -132,21 +132,21 @@ const bus = new Dispatch() // 订阅中心
 // console.log(bus);
 
 
-const fn = (...arg:Array<any>) => { // 发布中心
-    console.log(arg, 'on');
+// const fn = (...arg:Array<any>) => { // 发布中心
+//     console.log(arg, 'on');
     
-}
-bus.on('onabc', fn)
+// }
 // bus.on('onabc', fn)
-bus.once('onceasd', (...arg: Array<any>) => {
-    console.log(arg, 'once');
-})
+// bus.on('onabc', fn)
+// bus.once('onceasd', (...arg: Array<any>) => {
+//     console.log(arg, 'once');
+// })
 
 
 // bus.emit('onabc', 1, true, '2334') // 派发事件
-bus.emit('onabc', 1, true, 'ces') // 派发事件
+// bus.emit('onabc', 1, true, 'ces') // 派发事件
 // o.emit('onceasd', 1, true, '小满') // 派发事件
 
-bus.off('onabc',fn) // 删除事件
+// bus.off('onabc',fn) // 删除事件
 // bus.emit('onabc', 1, true, 'ces') // 派发事件
 // bus.emit('onabc', 1, true, 'ce') // 派发事件

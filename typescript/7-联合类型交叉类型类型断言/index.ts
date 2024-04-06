@@ -96,32 +96,32 @@
  */
 
 // ----类型守卫 类型断言还需要借助类型守卫函数，类型守卫函数就是用于判断未知数据是不是所需类型
-type User = {
-    name: string;
-    age: number;
-}
-function showUser(user: User) {
-    console.log(user.name);
-    console.log(user.age);
-}
-showUser({ name: 'Alice', age: 12 })
-let errorType = '';
+// type User = {
+//     name: string;
+//     age: number;
+// }
+// function showUser(user: User) {
+//     console.log(user.name);
+//     console.log(user.age);
+// }
+// showUser({ name: 'Alice', age: 12 })
+// let errorType = '';
 // showUser(errorType); //错误 showUser函数执行传递的参数是符合类型要求的。但是如果不符合要求的参数就会报错
 
 // 在运行时如何保证和检测来自其他地方的数据也符合我们的要求呢？  这就类型断言要干的事
-function isUser(arg: any): arg is User { // 格式：x is y ,表示x是不是y类型
-    if (!arg) {
-        return false;
-    }
-    else {
-        if (typeof arg.name == 'string' && typeof arg.age == 'number') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-// 类型守卫函数与普通函数没多大区别，唯一需要注意其返回值类型比较特殊特殊，格式：x is y ,表示x是不是y类型
-if (isUser(errorType)) {
-    showUser(errorType); // 类型断言后就不会报错了
-}
+// function isUser(arg: any): arg is User { // 格式：x is y ,表示x是不是y类型
+//     if (!arg) {
+//         return false;
+//     }
+//     else {
+//         if (typeof arg.name == 'string' && typeof arg.age == 'number') {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+// }
+// // 类型守卫函数与普通函数没多大区别，唯一需要注意其返回值类型比较特殊特殊，格式：x is y ,表示x是不是y类型
+// if (isUser(errorType)) {
+//     showUser(errorType); // 类型断言后就不会报错了
+// }

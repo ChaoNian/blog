@@ -38,48 +38,48 @@
 
 
 // 2.类的混入 
-class A {
-    type:boolean = false
-    changeType() {
-        this.type = !this.type
-    }
-}
+// class A {
+//     type:boolean = false
+//     changeType() {
+//         this.type = !this.type
+//     }
+// }
 
-class B {
-    name:string = '张三'
-    getName() {
-        return this.name
-    }
-}
+// class B {
+//     name:string = '张三'
+//     getName() {
+//         return this.name
+//     }
+// }
 
 // 创建一个类，结合了这两个mixins
 // 首先应该注意到的是，没使用extends而是使用implements【？？？】。 把类当成了接口
 // 我们可以这么做来达到目的，为将要mixin进来的属性方法创建出占位属性。 这告诉编译器这些成员在运行时是可用的。 这样就能使用mixin带来的便利，虽说需要提前定义一些占位属性
-class C implements A,B {
-    type:boolean
-    changeType:() => void
-    name: string
-    getName: () => string
-}
+// class C implements A,B {
+//     type:boolean
+//     changeType:() => void
+//     name: string
+//     getName: () => string
+// }
 // 最后，创建这个帮助函数，帮我们做混入操作。 它会遍历mixins上的所有属性，并复制到目标上去，把之前的占位属性替换成真正的实现代码
 // Object.getOwnPropertyNames()可以获取对象自身的属性，除去他继承来的属性，对它所有的属性遍历，它是一个数组，遍历一下它所有的属性名
 
 
-function Mixins(curCls: any, itemCls: any[]) {
-    itemCls.forEach(item => {
-        console.log(Object.getOwnPropertyNames(item.prototype), '1234567');
+// function Mixins(curCls: any, itemCls: any[]) {
+//     itemCls.forEach(item => {
+//         console.log(Object.getOwnPropertyNames(item.prototype), '1234567');
         
-        Object.getOwnPropertyNames(item.prototype).forEach(name => {
-            curCls.prototype[name] = item.prototype[name]
-        })
-    })
-}
+//         Object.getOwnPropertyNames(item.prototype).forEach(name => {
+//             curCls.prototype[name] = item.prototype[name]
+//         })
+//     })
+// }
 
 // 混入方法, 将基类中的属性方法,克隆到扩展类中
-Mixins(C, [A, B])
+// Mixins(C, [A, B])
 
-let obj = new C()
-console.log(obj.getName());
+// let obj = new C()
+// console.log(obj.getName());
 
  // 插件类型
 // class Logger {
