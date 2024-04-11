@@ -108,3 +108,31 @@
 //         console.log(123)
 //     }
 // }
+
+
+// 面试题 
+// interface 和 type 区别？
+/**
+ * interface 和 type 的区别主要体现在定义方式、可扩展性、联合类型和交叉类型、实现类等方面。以下是详细介绍：12
+    定义方式不同。type 使用关键字 `type` 进行定义，而 interface 使用关键字 `interface` 进行定义；type 用于定义类型别名，可以表示更广泛的类型，包括基本类型、联合类型、交叉类型等，而 interface 主要用于定义对象的形状。
+    可扩展性不同。interface 支持使用 `extends` 关键字进行继承，可以继承多个接口，而 type 不支持接口的继承；interface 可以通过 `extends` 关键字来扩展一个类型，而 type 可以使用 `&` 符号来扩展一个已定义的接口类型。
+    联合类型和交叉类型不同。type 可以使用联合类型(`|`)和交叉类型(`&`)进行类型组合，而 interface 不支持这两种类型的组合。
+    在实现类方面不同。interface 可以用于定义类的实现，包括属性和方法；type 定义的是别名，别名不能重复。
+    总结来说，type 和 interface 各有其适用场景，type 更适合用于定义基本类型、联合类型、交叉类型等，而 interface 更适合用于定义对象的结构和接口的继承。
+ */
+// interface Obj11 {
+//     name:string
+// }
+// type Obj2 = {
+//     name: string
+// }
+// let a:Obj11 = {name:'2323'} // interface
+// let b:Obj2 = {name:'2323'} // type
+
+// //  Record 约束对象的key和value
+// let User:Record<string, string>
+
+
+// user = a
+
+// user = b

@@ -146,3 +146,22 @@
 // type CustomReturnType <F extends Function> = F extends (...arg:any[]) => infer R ? R : never
 // ...arg:any[] 不管什么参数
 // type num1 = CustomReturnType<typeof fn>
+
+
+// 面试 如下： 给定一个 interface，里面有4个类型， 挑出1个或者多个 变为必填类型，其他类型变成非必填的， 请实现这样的泛型工具
+// interface M {
+//    requireA: string
+//    requireA1: string
+//    requireA2: number
+//    requireA3: boolean
+
+// }
+
+// 思路： 1 条选出 必填的属性Required,  Pick
+// 2 其他属性 变成 非必填(可选Partial) Omit
+
+// type RequireProd = Required<Pick<M, 'requireA'>> & Partial<Omit<M, 'requireA'>>
+// const O:RequireProd = {
+//    requireA: '13',
+//    requireA2: 23
+// }
