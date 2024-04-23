@@ -29,17 +29,29 @@
         // bar.setName("极客邦")
         // bar.getName()
         // console.log(bar.getName())
-        function A() {
-            function B() {
-                // debugger
-                console.log("hello")
-            }
-            B() // 作用域 执行 this 而不是A ？？
-        }
-        A()
+        // function A() {
+        //     function B() {
+        //         // debugger
+        //         console.log("hello")
+        //     }
+        //     B() // 作用域 执行 this 而不是A ？？
+        // }
+        // A()
 
-        console.log(a) // undefined
-        { function a(){} } 
+        // console.log(a) // undefined
+        // { function a(){} } 
+
+        function bar() {
+            console.log('bar')
+        }
+        function foo() {
+            setTimeout(bar, 0);
+            for (let i = 0; i < 5000; i++) {
+                let i = 5 + 8 + 8 + 8
+                console.log(i)
+            }
+        }
+        foo()
     </script>
 </body>
 
