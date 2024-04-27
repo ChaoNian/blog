@@ -53,3 +53,55 @@
 //   foo()
 
 
+// 生成器
+// function* genDemo() {
+//     console.log('1--');
+//     yield 'denerator 2'
+
+//     console.log('2---')
+//     yield 'generator 2'
+
+//     console.log('3---')
+//     yield 'generator 2'
+
+
+//     console.log('3---');
+//     return 'generator 2'
+// }
+
+// console.log('main 0');
+
+// let gen = genDemo()
+// console.log(gen, 'gen');
+// console.log(gen.next().value);
+
+// console.log('main 1');
+// console.log(gen.next().value);
+
+// console.log('main 2');
+// console.log(gen.next().value);
+
+// console.log('main 3');
+// console.log(gen.next().value);
+
+// console.log('main 4');
+// console.log(gen.next().value);
+
+// console.log('main 5');
+// console.log(gen.next().value);
+// console.log('6666---');
+
+
+// function loadImageAsync(url) {
+//     return new Promise(function(resolve, reject){
+//         const image = new Image()
+//         image.onload = function() {
+//             resolve(image)
+//         }
+//         image.onerror = function() {
+//             reject(new Error('Could not load image ar'+ url))
+//         }
+//         image.src = url
+
+//     })
+// }
