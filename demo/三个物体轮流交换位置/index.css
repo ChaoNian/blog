@@ -1,0 +1,29 @@
+.container {
+    /* padding: 20px;
+    margin-left: 40px; */
+    position: relative;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    line-height: 50px;
+}
+.circle {
+    position: absolute;
+    width: 50px;/* 初始大小 */
+    height: 50px; /* 初始大小 */
+    border-radius: 50%;
+    transition: all 1s ease-in-out;/* 过渡效果 */
+    /* 可以根据具体情况调整颜色 */
+    background-color: burlywood;
+
+}
+/* 放大的样式 */
+.circle.enlarged {
+    transform: scale(1.5) translate(-120px,60px);/* 放大1.5倍 */
+    z-index: 1;/* 确保在最前面 */
+}
+
+/* 每个圆具体位置 */
+#one-cloud { left: 50px; }
+#two-cloud { left: 170px; }
+#three-cloud { left: 290px; }
