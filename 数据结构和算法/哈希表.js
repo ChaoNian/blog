@@ -80,7 +80,9 @@ function HahsTable() {
 
         // 6. 判断是否需要扩容
         if (this.count > this.limit * 0.75) {
-            this.resize(this.limit * 2)
+            let newSize = this.limit * 2
+            let newPrime = this.getPrime(newSize) // 获取的一定是质数， 这样就可以保证limit 是质数
+            this.resize(newPrime)
         }
     }
 
@@ -132,7 +134,9 @@ function HahsTable() {
 
                 // 减少容量 ，最小容量是7
                 if (this.limit > 7 && this.count < this.limit * 0.25) {
-                    this.resize(Math.floor(this.limit / 2))
+                    let newSize = Math.floor(this.limit / 2)
+                    let newPrime = this.getPrime(newSize) // 获取的一定是质数， 这样就可以保证limit 是质数
+                    this.resize(newPrime)
                 }
              return tuple[1] // 返回被删除的值
             }
@@ -180,6 +184,30 @@ function HahsTable() {
             }
             
         }
+    }
+
+    // 判断某个数是否质数
+    HahsTable.prototype.isPrime = function(num) {
+          // 1. 获取num 的平方根
+        let temp = parseInt(Math.sqrt(num))
+
+        // 2. 循环判断
+        for (let i = 2; i <= temp; i++) {
+            if (num % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    // 获取质数的方法
+    HahsTable.prototype.getPrime = function(num) {
+      // 14 -> 17 从14开始往后找，只要找到最近的质数即可 返回
+      // 34 -> 37 从34开始往后找，只要找到最近的质数即可 返回
+      while (!this.isPrime(num)) {
+        num++
+      }
+      return num
     }
 
 }
