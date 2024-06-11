@@ -208,7 +208,7 @@ function DoublyLinkList() {
 
     // 属性
     this.head = null
-    this.   = null
+    this.tail = null
     this.length = 0
 
     // 常见的操作：方法
