@@ -77,6 +77,11 @@ function HahsTable() {
         // 5.进行添加操作
         bucket.push([key, value])
         this.count += 1
+
+        // 6. 判断是否需要扩容
+        if (this.count > this.limit * 0.75) {
+            this.resize(this.limit * 2)
+        }
     }
 
     // 获取操作
@@ -124,6 +129,11 @@ function HahsTable() {
             if (tuple[0] == key) {
                 bucket.splice(i, 1)
                 this.count--
+
+                // 减少容量 ，最小容量是7
+                if (this.limit > 7 && this.count < this.limit * 0.25) {
+                    this.resize(Math.floor(this.limit / 2))
+                }
              return tuple[1] // 返回被删除的值
             }
              
@@ -142,6 +152,36 @@ function HahsTable() {
     HahsTable.prototype.size = function() {
         return this.count
     }
+
+    // 哈希表扩容
+    HahsTable.prototype.resize = function(newLimit) {
+        // 1.保存旧的数据内容
+        let oldStorage = this.storage
+
+        // 2.重置所有的属性
+        this.storage = []
+        this.count = 0
+        this.limit = newLimit
+
+        // 3.遍历oldStorage 中所有的bucket
+        for (let i = 0; i < oldStorage.length; i++) {
+            // 3.1 取出对应的bucket
+            let bucket = oldStorage[i]
+
+            // 3.2 判断bucket 是否为null
+            if (bucket == null) {
+                continue
+            }
+
+            // 3.3 bucket中有数据， 那么 取出数据， 重新插入
+            for (let j = 0; j < bucket.length; j++) {
+                const tuple = bucket[j]
+                this.put(tuple[0], tuple[1])
+            }
+            
+        }
+    }
+
 }
 
 
@@ -165,3 +205,45 @@ console.log(ht.get('abc'));
 
 ht.remove('abc')
 console.log(ht.get('abc'));
+
+
+// 判断一个数是质数(
+// 特点：素数， 表示大于1的自然数中，只能被1和自己整除的数，不能被2到之间的num-1 数字整除
+function isPrime(num) {
+    if (num === 0) {
+        return '输入大于0的数字'
+    }
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            // 不是质数 可以被其他num 整除
+            return false
+        }
+    }
+    // 是质数
+    return true
+}
+
+// 求n 以内的质数
+function findPrime(n) {
+    // 取遍 n 以内 的数字 看看是不是质数 如果是就输出
+    for (let i = 2; i < n; i++) {
+        if (isPrime(i)) {
+            console.log(i);
+        }
+    }
+}
+
+// 更加高效判断质数
+function isPrime2(num) {
+    // 1. 获取num 的平方根
+    let temp = parseInt(Math.sqrt(num))
+
+    // 2. 循环判断
+    for (let i = 2; i <= temp; i++) {
+        if (num % i == 0) {
+            return false
+        }
+    }
+    return true
+
+}
