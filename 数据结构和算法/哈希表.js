@@ -273,5 +273,4 @@ function isPrime2(num) {
         }
     }
     return true
-
 }
