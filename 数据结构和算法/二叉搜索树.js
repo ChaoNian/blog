@@ -64,6 +64,26 @@ function BinarySearchTree() {
             this.preOrderTraversalNode(node.right, handler)
         }
     }
+
+    // 1.中序遍历 方向是 左根右   特点：升序
+    BinarySearchTree.prototype.midOrderTraversal = function (handler) {
+        this.midOrderTraversalNode(this.root, handler)
+    }
+
+    // 先序遍历递归函数（函数调用栈，先进先出， 当前函数执行完了就会出栈）
+    BinarySearchTree.prototype.midOrderTraversalNode = function(node,handler) {
+        if (node != null) {
+            // 1. 先处理经过节点的左子节点
+            this.midOrderTraversalNode(node.left, handler)
+            
+            // 2.后处理经过的节点
+            handler(node.key)
+
+            // 3. 后处理经过节点的右子节点
+            this.midOrderTraversalNode(node.right, handler)
+        }
+    }
+
 }
 
 // 测试
@@ -86,3 +106,9 @@ bst.preOrderTraversal(function(key) {
     s += key + ' '
 })
 console.log(s);
+
+let s1 = ''
+bst.midOrderTraversal(function(key) {
+    s1 += key + ' '
+})
+console.log(s1);
