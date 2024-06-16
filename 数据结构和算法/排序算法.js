@@ -99,6 +99,65 @@ function ArrayList() {
     }
 
     // 快速排序
+    // 1. 选择枢纽
+    ArrayList.prototype.median = function (left, right) {
+        // 1.取出中间的位置
+        let center = Math.floor((left + right) / 2)
+
+        // 判断大小， 并且进行交换
+        if (this.array[left] > this.array[center]) {
+            this.swap(left, center)
+        }
+        if (this.array[center] > this.array[right]) {
+            this.swap(center, right)
+        }
+        if (this.array[left] > this.array[right]) {
+            this.swap(left, right)
+        }
+
+        // 3.将center 换到right - 1 的位置, z这样不会重复对比
+        this.swap(center, right - 1)
+
+        // 返回枢纽
+        return this.array[right - 1]
+    }
+
+    // 2. 快速排序的实现
+    ArrayList.prototype.quicksort = function () {
+        this.quick(0, this.array.length - 1)
+    }
+    ArrayList.prototype.quick = function (left, right) {
+        // 1. 结束条件
+        if (left >= right) return
+
+        // 2.获取枢纽
+        let pivot = this.median(left, right)
+        if (!pivot) return
+
+        // 3. 定义变量，用于记录当前找到位置
+        let i = left
+        let j = right - 1
+
+        // 4.开始进行交换
+        while (true) {
+            // 两个位置分别遍历
+            while (this.array[++i] < pivot) {}
+            while (this.array[--j] > pivot) {}
+            if (i < j) {
+                this.swap(i, j)
+            } else {
+                break
+            }
+        }
+
+        // 5. 将枢纽放置在正确位置，i的位置
+        this.swap(i, right - 1)
+
+        // 6.分而治之 枢纽位置两侧分别继续循环
+        this.quick(left, i - 1)
+        this.quick(i + 1, right)
+
+    }
 
 }
 
@@ -120,5 +179,9 @@ console.log(list.toString());
 // console.log(list.toString());
 
 // 选择排序， 选中一个最小的循环对比
-list.selectionsort()
-console.log(list.toString());
+// list.selectionsort()
+// console.log(list.toString());
+
+
+// list.quicksort()
+// console.log(list.toString());
